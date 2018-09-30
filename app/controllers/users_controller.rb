@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = t("welcome")
-      redirect_to @user
+      redirect_to books_path
     else
       render :new
     end

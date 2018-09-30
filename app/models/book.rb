@@ -1,6 +1,18 @@
 class Book < ApplicationRecord
-  belongs_to :user
   belongs_to :category
-  has_many :reviews, dependent: :destroy
-  has_many :book_status
+  has_many :reviews
+
+  mount_uploader :book_img_file_name, PictureUploader
+
+  delegate :name, to: :category
+
+  validates :title, presence: true,
+    length: {maximum: Settings.models.book.title_max_len}
+  validates :author,
+    length: {maximum: Settings.models.book.author_name_max_len}
+  validates :description,
+    length: {maximum: Settings.models.book.descrip_max_len}
+
+  scope :sort_by_desc, ->{order created_at: :desc}
+  scope :select_by, ->value{where category_id: value}
 end

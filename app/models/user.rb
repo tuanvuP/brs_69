@@ -1,11 +1,7 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  has_many :books
   has_many :reviews
-  has_many :comments
-  has_many :requests
-  has_many :book_status
 
   validates :name, presence: true,
     length: {maximum: Settings.models.user.name.max_size}

@@ -1,0 +1,30 @@
+<% provide :title, t("edit") %>
+
+<p>
+  <h1><%= t ".edit_info" %></h1>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for @book, html: {multipart: true} do |f| %>
+        <%= render "shared/error_messages", object: f.object %>
+
+        <%= f.select :category_id, @categories %>
+
+        <span class="picture">
+          <%= f.file_field :book_img_file_name %>
+        </span>
+
+        <%= f.label t("field_book_title") %>
+        <%= f.text_field :title, class: "form-control" %>
+
+        <%= f.label t("field_book_description") %>
+        <%= f.text_field :description, class: "form-control" %>
+
+        <%= f.label t("field_author") %>
+        <%= f.text_field :author, class: "form-control" %>
+
+        <%= f.submit t(".update_info"), class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</p>
