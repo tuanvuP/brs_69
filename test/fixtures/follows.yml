@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  followed_id: 
+  follower_id: 
+  activated: 
+  activated_at: 2018-09-30 20:29:49
+
+two:
+  followed_id: 
+  follower_id: 
+  activated: 
+  activated_at: 2018-09-30 20:29:49
