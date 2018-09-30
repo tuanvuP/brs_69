@@ -1,33 +1,41 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+
+  error_count:
+    one: "The form contains %{count} error."
+    other: "The form contains %{count} errors."
+
+  # main title
+  base_title: "Book reviewing system"
+
+  # main pages title
+  new_book: "New book"
+  home: "Home"
+  edit: "Edit"
+
+  # fields
+  field_book_title: "Title"
+  field_book_description: "Description"
+  field_author: "Author"
+
+  # messages
+  delete_successfully: "Delete successfully"
+  error_message: "Something went wrong"
+  update_successfully: "Update successfully"
+  create_successfully: "Create successfully"
+
+  books:
+    new:
+      create_book: "Create book"
+      add_book: "Add new book"
+    edit:
+      update_info: "Update"
+      edit_info: "Edit book information"
+    index:
+      book_list: "List of all books"
+    show:
+      book_title: "Book info"
+      book_info: "Book information"
+      back: "Back to book list"
+      edit: "Edit"
+      delete: "Delete"
+      delete_confirm: "Are you sure?"

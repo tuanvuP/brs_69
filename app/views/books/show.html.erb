@@ -1,0 +1,20 @@
+<% provide :title, t(".book_title") %>
+
+<p>
+  <h1><%= t(".book_info") %></h1>
+
+  <nav>
+    <ul>
+      <h3><%= @book.title %></h3>
+      <h3><%= @book.description %></h3>
+      <h3><%= @book.author %></h3>
+      <h3><%= @book.category.name %></h3>
+    </ul>
+    <ul>
+      <%= link_to t(".back"), books_path %>
+      <%= link_to t(".edit"), edit_book_path(@book) %>
+      <%= link_to t(".delete"), @book, method: :delete,
+        data: {confirm: t(".delete_confirm")} %>
+    </ul>
+  </nav>
+</p>
