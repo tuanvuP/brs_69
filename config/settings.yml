@@ -1,0 +1,9 @@
+controller:
+  book:
+    per_page: 20
+
+models:
+  book:
+    title_max_len: 100
+    descrip_max_len: 500
+    author_name_max_len: 20

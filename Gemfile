@@ -3,7 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.5.1"
 
+gem "config"
+gem "will_paginate"
+gem "bootstrap-will_paginate"
+gem "faker"
 gem "rubocop", require: false
+gem "bootstrap-sass"
 gem "rails", "~> 5.2.1"
 gem "sqlite3"
 gem "puma", "~> 3.11"

@@ -1,0 +1,20 @@
+<% provide :title, t("home") %>
+
+<p>
+  <h1><%= t ".book_list" %></h1>
+
+  <%= link_to "Add book", new_book_path%>
+
+<%= form_tag(books_path, method: :get) do %>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag ("Search") %>
+<% end %>
+
+  <%= will_paginate %>
+
+  <ul class="books">
+    <%= render @books %>
+  </ul>
+
+  <%= will_paginate %>
+</p>

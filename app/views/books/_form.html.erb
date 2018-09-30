@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @book do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <%= f.label t("field_book_title") %>
+      <%= f.text_field :title, class: "form-control" %>
+
+      <%= f.label t("field_book_description") %>
+      <%= f.text_field :description, class: "form-control" %>
+
+      <%= f.label t("field_author") %>
+      <%= f.text_field :author, class: "form-control" %>
+
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
