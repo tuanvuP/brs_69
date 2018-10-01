@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  author: MyString
+  rates: 1
+  category_id: 1
+  file: MyString
+  book_img_file_name: MyString
+  book_img_file_size: 1
+  book_img_content_type: MyString
+  book_img_updated_at: 2018-10-01 10:31:51
+
+two:
+  title: MyString
+  description: MyText
+  author: MyString
+  rates: 1
+  category_id: 1
+  file: MyString
+  book_img_file_name: MyString
+  book_img_file_size: 1
+  book_img_content_type: MyString
+  book_img_updated_at: 2018-10-01 10:31:51
