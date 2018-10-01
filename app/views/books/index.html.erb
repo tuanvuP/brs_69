@@ -1,0 +1,19 @@
+<% provide :title, t("home") %>
+
+<p>
+  <%= will_paginate %>
+
+  <b class="current_category"> <%= t ".category" if !params[:category].blank? %>
+    <%= params[:category] %>
+  </b>
+
+  <% if @books.count == 0 %>
+    <h2><%= t ".content_1" %></h2>
+  <% else %>
+    <ul class="books">
+      <%= render @books %>
+    </ul>
+  <% end %>
+
+  <%= will_paginate %>
+</p>

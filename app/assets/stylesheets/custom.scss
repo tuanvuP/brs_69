@@ -28,6 +28,27 @@ textarea {
   }
 }
 
+.book_img, .book_img:hover{
+  text-decoration: none;
+}
+
+.book_img img{
+  width: 150px;
+  height: 210px;
+  padding-bottom: 4px;
+}
+
+/* Books index */
+.books {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 1px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
 /* typography */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
