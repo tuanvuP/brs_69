@@ -1,12 +1,38 @@
 en:
 
+  error:
+    one: "%{count} error"
+    other: "%{count} errors"
+
   # main title
   base_title: "Book reviewing system"
 
+  # messages
+  welcome_system: "Welcome to the My System!"
+  no_user: "No user"
+
+  # fields
+  field_signup: "Sign up"
+  field_name: "name"
+  field_email: "mail"
+  field_password: "password"
+  field_pass_confi: "password_confirmation"
+  field_confimation: "Confimation"
+
   # pages title
   home: "Home"
+
+  # buttons
+  submit_create: "Create my account"
 
   # main pages
   static_pages:
     home:
       content_1: "Welcome to the Reviewing Books System"
+
+  shared:
+    error_messages:
+      content_1: "The form contains"
+  layouts:
+    application:
+      content_1: "message"
