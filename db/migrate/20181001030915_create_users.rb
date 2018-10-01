@@ -9,7 +9,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :remenber_digest
       t.boolean :activated
       t.string :activation_digest
-      t.integer :role
+      t.integer :role, default: 0
 
       t.timestamps
     end

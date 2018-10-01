@@ -10,6 +10,9 @@ en:
   # messages
   welcome: "Welcome to my system!"
   invalid_email_or_password: "Invalid email/password combination"
+  profile_updated: "Profile updated"
+  please_login: "Please login"
+  delete_user: "User deleted"
 
   # fields
   field_signup: "Sign up"
@@ -23,6 +26,7 @@ en:
   login: "Log in"
   signup: "Sign up"
   edit: "Edit user"
+  all_users: "All Users"
 
   # buttons
   login_btn: "Log in"
@@ -43,6 +47,13 @@ en:
     edit:
       page_title: "Update your profile"
       content_1: "change"
+
+    index:
+      page_title: "All Users"
+
+    user:
+      content_1: "delete"
+      content_2: "You sure?"
 
   layouts:
     header:
