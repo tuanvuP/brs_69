@@ -8,47 +8,51 @@ en:
   base_title: "Book reviewing system"
 
   # messages
-  welcome_system: "Welcome to the My System!"
-  no_user: "No user"
-  invalid_email: "Invalid email/password combination"
+  welcome: "Welcome to my system!"
+  invalid_email_or_password: "Invalid email/password combination"
 
   # fields
   field_signup: "Sign up"
-  field_name: "name"
-  field_email: "mail"
-  field_password: "password"
-  field_pass_confi: "password_confirmation"
+  field_name: "Name"
+  field_email: "Email"
+  field_password: "Password"
   field_confimation: "Confimation"
 
   # pages title
   home: "Home"
   login: "Log in"
   signup: "Sign up"
-  users: "Users"
-  profile: "Profile"
-  settings: "Settings"
-  logout: "Log out"
-  account: "Account"
-  link: "#"
+  edit: "Edit user"
 
   # buttons
-  submit_create: "Create my account"
-  submit_login: "Log in"
-
-  # buttons
-  submit_create: "Create my account"
-
-  # buttons
-  submit_create: "Create my account"
-
-  # buttons
-  submit_create: "Create my account"
+  login_btn: "Log in"
+  update_btn: "Update"
+  signup_btn: "Create my account"
 
   # main pages
   static_pages:
     home:
       content_1: "Welcome to the Reviewing Books System"
+      btn_content: "Let started"
+
   shared:
     error_messages:
-      content_1: "The form contains"
+      content_1: "The form contains "
 
+  users:
+    edit:
+      page_title: "Update your profile"
+      content_1: "change"
+
+  layouts:
+    header:
+      logo_page: "Book reviewing"
+      users: "Users"
+      account: "Account"
+      profile: "Profile"
+      settings: "Settings"
+      logout: "Log out"
+
+  sessions:
+    new:
+      page_title: "Login"
