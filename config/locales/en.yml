@@ -10,6 +10,7 @@ en:
   # messages
   welcome_system: "Welcome to the My System!"
   no_user: "No user"
+  invalid_email: "Invalid email/password combination"
 
   # fields
   field_signup: "Sign up"
@@ -21,6 +22,24 @@ en:
 
   # pages title
   home: "Home"
+  login: "Log in"
+  signup: "Sign up"
+  users: "Users"
+  profile: "Profile"
+  settings: "Settings"
+  logout: "Log out"
+  account: "Account"
+  link: "#"
+
+  # buttons
+  submit_create: "Create my account"
+  submit_login: "Log in"
+
+  # buttons
+  submit_create: "Create my account"
+
+  # buttons
+  submit_create: "Create my account"
 
   # buttons
   submit_create: "Create my account"
@@ -29,10 +48,7 @@ en:
   static_pages:
     home:
       content_1: "Welcome to the Reviewing Books System"
-
   shared:
     error_messages:
       content_1: "The form contains"
-  layouts:
-    application:
-      content_1: "message"
+
