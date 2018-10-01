@@ -9,6 +9,13 @@
           <%= @user.name %>
         </h1>
       </section>
+      <section class="stats">
+        <%= render "shared/stats" %>
+      </section>
     </aside>
+  </div>
+
+  <div class="col-md-4">
+    <%= render "follow_form" if logged_in? %>
   </div>
 </p>

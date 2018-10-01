@@ -6,6 +6,12 @@ class User < ApplicationRecord
   has_many :comments
   has_many :requests
   has_many :book_status
+  has_many :active_follows, class_name: Follow.name,
+    foreign_key: :follower_id, dependent: :destroy
+  has_many :passive_follows, class_name: Follow.name,
+    foreign_key: :followed_id, dependent: :destroy
+  has_many :following, through: :active_follows, source: :followed
+  has_many :followers, through: :passive_follows, source: :follower
 
   validates :name, presence: true,
     length: {maximum: Settings.models.user.name.max_size}
@@ -20,5 +26,23 @@ class User < ApplicationRecord
   has_secure_password
 
   before_save {email.downcase!}
+
+  def follow other_user
+    following << other_user
+  end
+
+  def unfollow other_user
+    following.delete other_user
+  end
+
+  def following? other_user
+    following.include? other_user
+  end
+
+  private
+
+  def downcase_email
+    self.email = email.downcase
+  end
 
 end
