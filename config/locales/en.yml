@@ -1,4 +1,12 @@
-
 en:
-  hello: "Hello world"
-  app_name: "Brs69"
+
+  # main title
+  base_title: "Book reviewing system"
+
+  # pages title
+  home: "Home"
+
+  # main pages
+  static_pages:
+    home:
+      content_1: "Welcome to the Reviewing Books System"
