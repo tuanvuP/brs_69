@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 2018_10_01_041328) do
     t.string "remenber_digest"
     t.boolean "activated"
     t.string "activation_digest"
-    t.integer "role"
+    t.integer "role", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
