@@ -7,3 +7,7 @@ models:
     password:
       min_size: 6
 
+view:
+  user:
+    size:
+      max_size: 50
