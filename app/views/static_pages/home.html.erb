@@ -1,8 +1,15 @@
 <% provide :title, t("home") %>
-
-<p>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="stats">
+        <%= render "shared/stats" %>
+      </section>
+    </aside>
+  </div>
+<% else %>
   <div class="center jumbotron">
     <h1><%= t(".content_1") %></h1>
     <%= link_to t(".btn_content"), "#", class: "btn btn-lg btn-primary" %>
   </div>
-</p>
+<% end %>

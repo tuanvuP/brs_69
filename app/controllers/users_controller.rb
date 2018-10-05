@@ -16,8 +16,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new user_params
-
+    @user = User.new(user_params)
     if @user.save
       log_in @user
       flash[:success] = t("welcome")
@@ -45,6 +44,18 @@ class UsersController < ApplicationController
     else
       render file: "public/404.html", status: :not_found, layout: false
     end
+  end
+
+  def following
+    @title = t(".page_title_following")
+    @users = @user.following.paginate page: params[:page]
+    render :show_follow
+  end
+
+  def followers
+    @title = t(".page_title_followers")
+    @users = @user.followers.paginate page: params[:page]
+    render :show_follow
   end
 
   private
