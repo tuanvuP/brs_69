@@ -32,6 +32,8 @@ en:
   login_btn: "Log in"
   update_btn: "Update"
   signup_btn: "Create my account"
+  follow_btn: "Follow"
+  unfollow_btn: "Unfollow"
 
   # main pages
   static_pages:
@@ -43,7 +45,15 @@ en:
     error_messages:
       content_1: "The form contains "
 
+    stats:
+      content_1: "following"
+      content_2: "followers"
+
   users:
+
+    page_title_following: "Following"
+    page_title_followers: "Followers"
+
     edit:
       page_title: "Update your profile"
       content_1: "change"
@@ -54,6 +64,9 @@ en:
     user:
       content_1: "delete"
       content_2: "You sure?"
+
+    show_follow:
+      content_1: "view my profile"
 
   layouts:
     header:
