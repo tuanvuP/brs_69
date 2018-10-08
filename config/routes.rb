@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-  resources :users
 
   resources :follows, only: [:create, :destroy]
+  resources :books
 end

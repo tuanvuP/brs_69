@@ -6,8 +6,16 @@ models:
       max_size: 255
     password:
       min_size: 6
+  book:
+    title_max_len: 100
+    descrip_max_len: 500
+    author_name_max_len: 50
 
 view:
   user:
     size:
       max_size: 50
+
+controller:
+  book:
+    per_page: 20

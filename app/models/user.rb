@@ -1,10 +1,9 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  has_many :books
-  has_many :reviews
-  has_many :comments
-  has_many :requests
+  has_many :reviews, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :requests, dependent: :destroy
   has_many :book_status
   has_many :active_follows, class_name: Follow.name,
     foreign_key: :follower_id, dependent: :destroy

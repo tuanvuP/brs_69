@@ -1,0 +1,26 @@
+<% provide :title, t(".book_title") %>
+
+<p>
+  <h1><%= t(".book_info") %></h1>
+
+  <div class="row">
+    <div class="col-md-2">
+      <b class="book_img"><%= image_tag @book.book_img_file_name.url %></b>
+    </div>
+
+    <div class="col-md-10">
+      <h3><%= @book.title %></h3>
+      <h3><%= @book.author %></h3>
+      <h4><%= @book.name %></h4>
+      <p><%= @book.description %></p>
+    </div>
+  </div>
+
+  <%= link_to t(".back"), books_path %>
+
+  <% if logged_in? && current_user.admin? %>
+    <%= link_to t(".edit"), edit_book_path(@book) %>
+    <%= link_to t(".delete"), @book, method: :delete,
+      data: {confirm: t(".delete_confirm")} %>
+  <% end %>
+</p>
