@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2018_10_01_041328) do
     t.string "title"
     t.text "description"
     t.string "author"
-    t.integer "rates"
+    t.float "rates"
     t.integer "category_id"
     t.string "file"
     t.string "book_img_file_name"

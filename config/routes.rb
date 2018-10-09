@@ -19,4 +19,9 @@ Rails.application.routes.draw do
     resources :reviews
   end
   resources :requests
+
+  namespace :admin do
+    root "static_pages#index"
+    resources :users, :books, :reviews, :requests
+  end
 end
