@@ -8,14 +8,20 @@ models:
       min_size: 6
   book:
     title_max_len: 100
-    descrip_max_len: 500
+    descrip_max_len: 400
     author_name_max_len: 50
+    self_per_page: 20
+  review:
+    content_min_len: 4
+    content_max_len: 100
 
 view:
   user:
     size:
       max_size: 50
 
-controller:
-  book:
+controllers:
+  reviews:
     per_page: 20
+  books:
+    per_page: 5

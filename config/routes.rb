@@ -15,5 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :follows, only: [:create, :destroy]
-  resources :books
+  resources :books do
+    resources :reviews
+  end
 end

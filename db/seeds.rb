@@ -14,7 +14,7 @@ User.create!(name: "Admin",
                password_confirmation: password)
 end
 
-3.times do |n|
+5.times do |n|
   name = Faker::Book.genre
   Category.create!(name: name)
 end
@@ -30,7 +30,7 @@ followers.each { |follower| follower.follow(user) }
   title = Faker::Book.title
   description = "Book's description-#{n+1}"
   author = Faker::Book.author
-  category_id = [1, 2, 3].sample
+  category_id = [1, 2, 3, 4, 5].sample
   Book.create!(title: title,
                description: description,
                author: author,
