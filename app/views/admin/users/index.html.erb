@@ -1,0 +1,26 @@
+<% provide :title, t("admin_user_page") %>
+
+<div class="container">
+  <h2> <%= t ".content_1" %> </h2>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th> <%= t ".title_name" %> </th>
+        <th> <%= t ".title_email" %> </th>
+        <th> <%= t ".title_role" %> </th>
+        <th colspan="2"> <%= t ".title_option" %> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |m| %>
+        <tr>
+          <td> <%= m.name %> </td>
+          <td> <%= m.email %> </td>
+          <td> <%= m.role %> </td>
+          <td> <%= link_to t(".edit_btn"), "#" %> </td>
+          <td> <%= link_to t(".delete_btn"), "#" %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

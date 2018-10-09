@@ -1,0 +1,26 @@
+<% provide :title, t("admin_book_page") %>
+
+<div class="container">
+  <h2> <%= t ".content_1" %> </h2>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th> <%= t ".title_title" %> </th>
+        <th> <%= t ".title_author" %> </th>
+        <th> <%= t ".title_cate" %> </th>
+        <th colspan="2"> <%= t ".title_option" %> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |m| %>
+        <tr>
+          <td> <%= m.title %> </td>
+          <td> <%= m.author %> </td>
+          <td> <%= m.category.name %> </td>
+          <td> <%= link_to t(".edit_btn"), "#" %> </td>
+          <td> <%= link_to t(".delete_btn"), "#" %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,26 @@
+<% provide :title, t("admin_request_page") %>
+
+<div class="container">
+  <h2> <%= t ".content_1" %> </h2>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th> <%= t ".title_from" %> </th>
+        <th> <%= t ".title_title" %> </th>
+        <th> <%= t ".title_content" %> </th>
+        <th colspan="2"> <%= t ".title_option" %> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @requests.each do |m| %>
+        <tr>
+          <td> <%= m.user_id %> </td>
+          <td> <%= m.title %> </td>
+          <td> <%= m.content %> </td>
+          <td> <%= link_to t(".edit_btn"), "#" %> </td>
+          <td> <%= link_to t(".delete_btn"), "#" %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

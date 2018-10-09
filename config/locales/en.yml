@@ -49,6 +49,12 @@ en:
   edit_request: "Edit request"
   requests_title: "Requests"
   new_request: "New request"
+  admin_page: "Admin page"
+  admin_book_page: "Books manager"
+  admin_request_page: "Requests manager"
+  admin_review_page: "Reviews manager"
+  admin_user_page: "Users manager"
+
 
   # buttons
   login_btn: "Log in"
@@ -97,8 +103,14 @@ en:
       add_book_btn: "Add book"
       categories: "Categories"
       books: "Books"
-      request_manager: "Request manager"
       my_requests: "My requests"
+      admin: "Admin"
+    left:
+      admin: "Admin"
+      books: "Books manager"
+      requests: "Requests manager"
+      reviews: "Reviews manager"
+      users: "Users manager"
 
   sessions:
     new:
@@ -169,3 +181,42 @@ en:
       content_4: "You have no request to admin"
     new:
       content_1: New request
+
+  admin:
+    books:
+      index:
+        content_1: "Books"
+        title_title: "Title"
+        title_author: "Author"
+        title_cate: "Category"
+        title_option: "Options"
+        edit_btn: "Edit"
+        delete_btn: "Delete!"
+    requests:
+      index:
+        content_1: "Requests"
+        title_from: "From"
+        title_title: "Title"
+        title_content: "Content"
+        title_option: "Options"
+        edit_btn: "Edit"
+        delete_btn: "Delete!"
+    reviews:
+      index:
+        content_1: "Reviews"
+        title_book_id: "Book Id"
+        title_user_id: "User id"
+        title_rating: "Rating"
+        title_content: "Content"
+        title_option: "Options"
+        edit_btn: "Edit"
+        delete_btn: "Delete!"
+    users:
+      index:
+        content_1: "Users"
+        title_name: "Name"
+        title_email: "Email"
+        title_role: "Role"
+        title_option: "Options"
+        edit_btn: "Edit"
+        delete_btn: "Delete!"

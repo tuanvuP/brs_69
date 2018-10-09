@@ -21,6 +21,7 @@
 .navbar {
   font-family: 'Ubuntu', sans-serif;
   text-transform: uppercase;
+  border: none
 }
 
 .scroll {
@@ -386,4 +387,27 @@ input {
       line-height: 1.5;
     }
   }
+}
+
+.navbar-fixed-left {
+  width: 170px;
+  position: fixed;
+  border-radius: 0;
+  height: 100%;
+  margin-top: -10px;
+  text-align: center;
+}
+
+.navbar-fixed-left .navbar-nav > li {
+  float: none;
+  width: 170px;
+}
+
+.navbar-fixed-left + .container {
+  padding-left: 160px;
+}
+
+.navbar-fixed-left .navbar-nav > li > .dropdown-menu {
+  margin-top: -50px;
+  margin-left: 140px;
 }

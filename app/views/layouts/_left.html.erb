@@ -1,0 +1,9 @@
+<div class="navbar navbar-inverse navbar-fixed-left">
+  <%= link_to t(".admin"), admin_root_path, class: "navbar-brand" %>
+  <ul class="nav navbar-nav">
+   <li> <%= link_to t(".books"), admin_books_path %> </li>
+   <li> <%= link_to t(".requests"), admin_requests_path %> </li>
+   <li> <%= link_to t(".reviews"), admin_reviews_path %> </li>
+   <li> <%= link_to t(".users"), admin_users_path %> </li>
+  </ul>
+</div>
