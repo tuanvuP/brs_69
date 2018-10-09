@@ -4,7 +4,7 @@ class CreateBooks < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :description
       t.string :author
-      t.integer :rates
+      t.float :rates
       t.integer :category_id
       t.string :file
       t.string :book_img_file_name
