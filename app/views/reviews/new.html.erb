@@ -3,5 +3,5 @@
 
 <p>
   <h1><%= t ".add_review" %></h1>
-  <%= render "form" %>
+  <%= render partial: "form", locals: {review: Review.new} %>
 </p>

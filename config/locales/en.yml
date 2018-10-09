@@ -23,6 +23,7 @@ en:
   create_successfully: "Create successfully"
   deny_access: "Not allowed to access this page"
   has_reviewed: "You've already written a review for this book."
+  logged_in_as_admin: "You are now logged in as admin"
 
   # fields
   field_signup: "Sign up"
@@ -35,6 +36,7 @@ en:
   field_author: "Author"
   field_rating: "Rating"
   field_content: "Content"
+  field_request_title: "Title"
 
   # pages title
   home: "Home"
@@ -44,6 +46,9 @@ en:
   all_users: "All Users"
   new_book: "New book"
   review: "Review"
+  edit_request: "Edit request"
+  requests_title: "Requests"
+  new_request: "New request"
 
   # buttons
   login_btn: "Log in"
@@ -63,27 +68,21 @@ en:
   shared:
     error_messages:
       content_1: "The form contains "
-
     stats:
       content_1: "following"
       content_2: "followers"
 
   users:
-
     page_title_following: "Following"
     page_title_followers: "Followers"
-
     edit:
       page_title: "Update your profile"
       content_1: "change"
-
     index:
       page_title: "All Users"
-
     user:
       content_1: "delete"
       content_2: "You sure?"
-
     show_follow:
       content_1: "view my profile"
 
@@ -98,6 +97,8 @@ en:
       add_book_btn: "Add book"
       categories: "Categories"
       books: "Books"
+      request_manager: "Request manager"
+      my_requests: "My requests"
 
   sessions:
     new:
@@ -148,3 +149,23 @@ en:
       edit_form_title: "Edit review"
     index:
       content_1: "This book has no review"
+
+  requests:
+    request:
+      content_1: "From: "
+      content_2: "Title: "
+      content_3: "Content: "
+      delete_btn: "delete"
+      delete_confirm: "Are you sure???"
+      edit_btn: "edit"
+      cancel_btn: "cancel"
+    edit:
+      content_1: "Edit request"
+    index:
+      content_1: "Requests list"
+      new_request_btn: "New request"
+      content_2: "New request"
+      content_3: "No request found"
+      content_4: "You have no request to admin"
+    new:
+      content_1: New request

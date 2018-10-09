@@ -1,0 +1,23 @@
+<div class="request">
+  <% if current_user.admin? %>
+    <%= t ".content_1" %> <%= request.name %>
+    <div class="request-title"><b> <%= t ".content_2" %> <%= request.title %> </b></div>
+    <div class="request-content"> <%= t ".content_3" %> <%= request.content %> </div>
+    <div class="links btn-group">
+      <%= link_to t(".delete_btn"), request_path(request),
+        method: :delete, data: {confirm: t(".delete_confirm")},
+        class: "btn btn-custom" %>
+    </div>
+  <% else %>
+    <% if request.user_id == current_user.id %>
+        <div class="request-title"><b> <%= t ".content_2" %> <%= request.title %> </b></div>
+        <div class="request-content"> <%= t ".content_3" %> <%= request.content %> </div>
+      <div class="links btn-group">
+        <%= link_to t(".edit_btn"), edit_request_path(request), class: "btn btn-custom" %>
+        <%= link_to t(".cancel_btn"), request_path(request),
+          method: :delete, data: {confirm: t(".delete_confirm")},
+          class: "btn btn-custom" %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

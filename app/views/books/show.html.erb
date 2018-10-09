@@ -56,8 +56,8 @@
           </div>
         <% end %>
         <h4><%= t ".content_5" %></h4>
-        <% if @reviews.count > 0  %>
         <ul class="see-reviews-list">
+        <% if @reviews.count > 0  %>
           <%= will_paginate @reviews %>
           <li><%= link_to t(".content_6"), book_reviews_path(@book) %></li>
             <%= render @reviews %>

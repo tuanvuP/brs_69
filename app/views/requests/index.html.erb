@@ -1,0 +1,45 @@
+<% provide :title, t("requests_title") %>
+
+<p>
+  <h1><%= t ".content_1" %></h1>
+  <div class="requests">
+    <% if logged_in? && !current_user.admin? %>
+      <button type="button" class="btn btn-custom" data-toggle="modal"
+        data-target="#myModal"> <%= t(".new_request_btn") %> </button>
+    <% end %>
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+              <h4 class="modal-title"><%= t(".content_2") %></h4>
+          </div>
+          <div class="modal-body">
+            <%= render partial: "form" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="see-requests-list">
+      <% if current_user.admin? %>
+        <% if @requests.size > 0 %>
+          <%= will_paginate %>
+            <%= render @requests %>
+          <%= will_paginate %>
+          <% else %>
+            <%= t ".content_3" %>
+        <% end %>
+      <% else %>
+        <% if current_user.requests.size > 0 %>
+          <%= will_paginate %>
+            <%= render @requests %>
+          <%= will_paginate %>
+        <% else %>
+          <%= t ".content_4" %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</p>
