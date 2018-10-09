@@ -4,6 +4,10 @@ en:
     one: "The form contains %{count} error."
     other: "The form contains %{count} errors."
 
+  review_count:
+    one: "Based on %{count} review."
+    other: "Based on %{count} reviews."
+
   # main title
   base_title: "Book reviewing system"
 
@@ -18,6 +22,7 @@ en:
   update_successfully: "Update successfully"
   create_successfully: "Create successfully"
   deny_access: "Not allowed to access this page"
+  has_reviewed: "You've already written a review for this book."
 
   # fields
   field_signup: "Sign up"
@@ -28,6 +33,8 @@ en:
   field_book_title: "Title"
   field_book_description: "Description"
   field_author: "Author"
+  field_rating: "Rating"
+  field_content: "Content"
 
   # pages title
   home: "Home"
@@ -36,6 +43,7 @@ en:
   edit: "Edit user"
   all_users: "All Users"
   new_book: "New book"
+  review: "Review"
 
   # buttons
   login_btn: "Log in"
@@ -43,6 +51,7 @@ en:
   signup_btn: "Create my account"
   follow_btn: "Follow"
   unfollow_btn: "Unfollow"
+  create_review_btn: "Create review"
 
   # main pages
   static_pages:
@@ -110,5 +119,28 @@ en:
       edit: "Edit"
       delete: "Delete"
       delete_confirm: "Are you sure?"
+      content_1: "From: "
+      content_2: "Average rating"
+      content_3: "Based on "
+      content_4: "Category: "
+      add_review_btn: "Add new review"
+      content_5: "Reviews:"
+      content_6: "see all reviews"
+      content_7: "this book has no review"
+
     form:
       select_category: "Select category..."
+
+  reviews:
+    new:
+      add_review: "New Review"
+    edit:
+      update_info: "Update review"
+    form:
+      rating: "Rating"
+    review:
+      edit_link: "Edit"
+      delete_link: "Delete"
+      delete_confirm: "Are you sure?"
+    index:
+      content_1: "This book has no review"

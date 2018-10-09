@@ -1,50 +1,65 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <% if logged_in? %>
-      <%= link_to t(".logo_page"), books_path, id: "logo" %>
-    <% else %>
-      <%= link_to t(".logo_page"), root_path, id: "logo" %>
-    <% end %>
-    <nav>
+  <div class="row mynav fix">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10 fix">
+      <nav class="navbar">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle"
+              data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <% if logged_in? %>
+              <%= link_to t(".logo_page"), books_path, id: "logo" %>
+            <% else %>
+              <%= link_to t(".logo_page"), root_path, id: "logo" %>
+            <% end %>
+          </div>
 
-      <ul class="nav navbar-nav navbar-left">
-        <% if logged_in? %>
-          <li><%= link_to t(".users"), users_path %></li>
-          <li class="dropdown">
-            <%= link_to "#" , class: "dropdown-toggle", data: {toggle:"dropdown"} do %>
-            <%= t".account" %> <b class="caret"></b> <% end %>
-            <ul class="dropdown-menu">
-              <li><%= link_to t(".profile"), current_user %></li>
-              <li><%= link_to t(".settings"), edit_user_path(current_user) %></li>
-              <li class="divider"></li>
-              <li>
-                <%= link_to t(".logout"), logout_path, method: :delete %>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <% if logged_in? %>
+                <li><%= link_to t(".users"), users_path %></li>
+                <li class="dropdown">
+                  <%= link_to "#" , class: "dropdown-toggle", data: {toggle:"dropdown"} do %>
+                  <%= t".account" %> <b class="caret"></b> <% end %>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to t(".profile"), current_user %></li>
+                    <li><%= link_to t(".settings"), edit_user_path(current_user) %></li>
+                    <li class="divider"></li>
+                    <li>
+                      <%= link_to t(".logout"), logout_path, method: :delete %>
+                    </li>
+                  </ul>
+                </li>
+              <% else %>
+                <li><%= link_to t("login"), login_path %></li>
+                <li><%= link_to t("signup"), signup_path %></li>
+              <% end %>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <% if logged_in? && current_user.admin? %>
+                <li><%= link_to t(".add_book_btn"), new_book_path %></li>
+              <% end %>
+              <li><%= link_to t(".books"), books_path %></li>
+              <li class="dropdown">
+                <%= link_to "#" , class: "dropdown-toggle", data: {toggle:"dropdown"} do %>
+                <%= t".categories" %> <b class="caret"></b> <% end %>
+                <ul class="dropdown-menu scroll">
+                  <% load_categories.each do |category| %>
+                    <li class="<%= "active" if params[:category] == category.name %>">
+                      <%= link_to category.name, books_path(category: category.name) %>
+                    </li>
+                  <% end %>
+                </ul>
               </li>
             </ul>
-          </li>
-        <% else %>
-          <li><%= link_to t("login"), login_path %></li>
-          <li><%= link_to t("signup"), signup_path %></li>
-        <% end %>
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right">
-        <% if logged_in? && current_user.admin? %>
-          <li><%= link_to t(".add_book_btn"), new_book_path %></li>
-        <% end %>
-        <li><%= link_to t(".books"), books_path %></li>
-        <li class="dropdown">
-          <%= link_to "#" , class: "dropdown-toggle", data: {toggle:"dropdown"} do %>
-          <%= t".categories" %> <b class="caret"></b> <% end %>
-          <ul class="dropdown-menu">
-            <% Category.all.each do |category| %>
-              <li class="<%= "active" if params[:category] == category.name %>">
-                <%= link_to category.name, books_path(category: category.name) %>
-              </li>
-            <% end %>
-          </ul>
-        </li>
-      </ul>
-    </nav>
+          </div>
+        </div>
+      </nav>
+    </div>
+  <div class="col-sm-1"></div>
   </div>
 </header>

@@ -4,4 +4,8 @@ module ApplicationHelper
     base_title = I18n.t(".base_title")
     page_title.blank? ? base_title : page_title + " | " + base_title
   end
+
+  def load_categories
+    Category.all
+  end
 end

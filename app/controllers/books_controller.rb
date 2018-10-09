@@ -4,13 +4,11 @@ class BooksController < ApplicationController
 
   def index
     if params[:category].blank?
-      @books = Book.sort_by_desc.paginate page: params[:page],
-        per_page: Settings.controller.book.per_page
+      @books = Book.sort_by_desc.paginate page: params[:page]
     else
       category = Category.find_by name: params[:category]
       if category.present?
-        @books = category.books.sort_by_desc
-        .paginate page: params[:page], per_page: Settings.controller.book.per_page
+        @books = category.books.sort_by_desc.paginate page: params[:page]
       else
         render file: "public/404.html", status: :not_found, layout: false
       end
@@ -26,7 +24,14 @@ class BooksController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    if @book.reviews.blank?
+      @average_review = 0
+    else
+      @average_review = @book.reviews.average(:rating).round(2)
+    end
+
+  end
 
   def destroy
     if @book.destroy
@@ -77,5 +82,9 @@ class BooksController < ApplicationController
 
   def load_category
     @categories = Category.all.map{ |m| [m.name, m.id] }
+  end
+
+  def load_review
+    @reviews = Review.find_by id: params[:id]
   end
 end

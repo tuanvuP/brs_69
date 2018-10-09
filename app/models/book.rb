@@ -15,5 +15,6 @@ class Book < ApplicationRecord
     length: {maximum: Settings.models.book.descrip_max_len}
   validates :category_id, presence: true
 
-  scope :sort_by_desc, ->{order created_at: :desc}
+  self.per_page = 20
+
 end

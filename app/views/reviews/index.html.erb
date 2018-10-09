@@ -1,0 +1,11 @@
+<% provide :title, t("review") %>
+
+<%= will_paginate %>
+  <div class="reviews">
+    <% if @book.reviews.size > 0 %>
+      <%= render @reviews %>
+    <% else %>
+      <%= t ".content_1" %>
+    <% end %>
+  </div>
+<%= will_paginate %>
