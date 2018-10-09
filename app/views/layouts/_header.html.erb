@@ -16,9 +16,7 @@
             <ul class="dropdown-menu">
               <li><%= link_to t(".profile"), current_user %></li>
               <li><%= link_to t(".settings"), edit_user_path(current_user) %></li>
-              <% if current_user.admin? %>
-                <li><%= link_to t("request_manager"), requests_path %></li>
-              <% else %>
+              <% if !current_user.admin? %>
                 <li><%= link_to t("my_requests"), requests_path %></li>
               <% end %>
               <li class="divider"></li>
@@ -27,6 +25,9 @@
               </li>
             </ul>
           </li>
+          <% if current_user.admin? %>
+            <li> <%= link_to t(".admin"), admin_root_path %> </li>
+          <% end %>
         <% else %>
           <li><%= link_to t("login"), login_path %></li>
           <li><%= link_to t("signup"), signup_path %></li>
@@ -34,9 +35,13 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <% if logged_in? && current_user.admin? %>
-          <li><%= link_to t(".add_book_btn"), new_book_path %></li>
-        <% end %>
+        <li>
+          <%= form_tag search_path, method: :get do %>
+            <%= text_field_tag(:search, params[:search]) %>
+            <%= submit_tag t(".search") %>
+          <% end %>
+        </li>
+
         <li><%= link_to t(".books"), books_path %></li>
         <li class="dropdown">
           <%= link_to "#" , class: "dropdown-toggle", data: {toggle:"dropdown"} do %>

@@ -16,4 +16,8 @@ class Book < ApplicationRecord
   validates :category_id, presence: true
 
   self.per_page = Settings.models.book.self_per_page
+
+  scope :search_by, ->value do
+    where("title LIKE ?", "%#{value}%") if value.present?
+  end
 end

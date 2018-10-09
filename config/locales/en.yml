@@ -49,6 +49,16 @@ en:
   edit_request: "Edit request"
   requests_title: "Requests"
   new_request: "New request"
+  admin_page: "Admin page"
+  admin_book_page: "Books manager"
+  admin_request_page: "Requests manager"
+  admin_review_page: "Reviews manager"
+  admin_user_page: "Users manager"
+  edit_review: "Edit review"
+  edit_book: "Edit book"
+  edit_user: "Edit user"
+  search_result: "Search result"
+
 
   # buttons
   login_btn: "Log in"
@@ -97,8 +107,15 @@ en:
       add_book_btn: "Add book"
       categories: "Categories"
       books: "Books"
-      request_manager: "Request manager"
       my_requests: "My requests"
+      admin: "Admin"
+      search: "Search"
+    left:
+      admin: "Admin"
+      books: "Books manager"
+      requests: "Requests manager"
+      reviews: "Reviews manager"
+      users: "Users manager"
 
   sessions:
     new:
@@ -131,6 +148,9 @@ en:
       content_7: "this book has no review"
       new_review_btn: "Add new review"
       new_review_form_title: "New review"
+    search:
+      content_1: "Result"
+      no_book_found: "No book found"
 
     form:
       select_category: "Select category..."
@@ -169,3 +189,68 @@ en:
       content_4: "You have no request to admin"
     new:
       content_1: New request
+
+  admin:
+    books:
+      index:
+        content_1: "Books"
+        title_id: "Book id"
+        title_title: "Title"
+        title_rate: "Rates"
+        title_author: "Author"
+        title_cate: "Category"
+        title_option: "Options"
+        edit_btn: "Edit"
+        delete_btn: "Delete"
+        delete_confirm: "Are you sure???"
+        no_book_found: "No books found"
+        add_book_btn: "Add new book"
+      edit:
+        content_1: "Edit book information"
+      new:
+        content_1: "Add new book"
+        select_category: "Select Category"
+    requests:
+      index:
+        content_1: "Requests"
+        title_userid: "User id"
+        title_username: "User name"
+        title_title: "Title"
+        title_content: "Content"
+        title_option: "Options"
+        edit_btn: "Edit"
+        delete_btn: "Delete"
+        delete_confirm: "Are you sure???"
+        no_request_found: "No request found"
+      edit:
+        content_1: "Edit user request"
+    reviews:
+      index:
+        content_1: "Reviews"
+        title_book_id: "Book Id"
+        title_user_id: "User id"
+        title_rating: "Rating"
+        title_content: "Content"
+        title_option: "Options"
+        edit_btn: "Edit"
+        delete_btn: "Delete"
+        delete_confirm: "Are you sure???"
+        no_review_found: "No review found"
+        title_user_name: "User name"
+      edit:
+        content_1: "Edit user review"
+    users:
+      index:
+        content_1: "Users"
+        title_id: "User id"
+        title_name: "Name"
+        title_email: "Email"
+        title_role: "Role"
+        title_option: "Options"
+        edit_btn: "Edit"
+        delete_btn: "Delete"
+        delete_confirm: "Are you sure???"
+        no_user_found: "No user found"
+      edit:
+        content_1: "Edit user information"
+        content_2: "change"

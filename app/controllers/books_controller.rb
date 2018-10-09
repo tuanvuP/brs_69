@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
-  before_action :load_book, except: [:index, :new, :create]
-  before_action :load_category, except: [:index, :show, :destroy]
+  before_action :load_book, except: [:index, :new, :create, :search]
+  before_action :load_category, except: [:index, :show, :destroy, :search]
 
   def index
     if params[:category].blank?
@@ -67,6 +67,11 @@ class BooksController < ApplicationController
     else
       render :new
     end
+  end
+
+  def search
+    @result = Book.search_by(params[:search]).sort_by_created_desc.paginate page: params[:page],
+      per_page: Settings.controllers.books.per_page_search
   end
 
   private
