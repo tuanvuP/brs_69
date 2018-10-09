@@ -1,0 +1,13 @@
+<% provide :title, t("search_result") %>
+
+<p>
+  <h1><%= t".content_1" %></h1>
+
+  <%= will_paginate @result %>
+
+  <% if @result.size == 0 %>
+    <h2><%= t(".no_book_found") %></h2>
+  <% else %>
+    <ul><%= render partial: "result", locals:{book: @result} %></ul>
+  <% end %>
+</p>

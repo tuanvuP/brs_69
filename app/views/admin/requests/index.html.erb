@@ -1,0 +1,38 @@
+<% provide :title, t("admin_request_page") %>
+
+<div class="container">
+  <h2> <%= t ".content_1" %> </h2>
+
+  <%= will_paginate %>
+
+  <% if @requests.size > 0 %>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th> <%= t ".title_userid" %> </th>
+          <th> <%= t ".title_username" %> </th>
+          <th class="admin-title-custom"> <%= t ".title_title" %> </th>
+          <th class="admin-title-custom"> <%= t ".title_content" %> </th>
+          <th colspan="2"> <%= t ".title_option" %> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @requests.each do |m| %>
+          <tr>
+            <td> <%= m.user_id %> </td>
+            <td> <%= link_to m.name, user_path(m.user_id) %> </td>
+            <td class="admin-row-custom"> <%= m.title %> </td>
+            <td class="admin-row-custom"> <%= m.content %> </td>
+            <td> <%= link_to t(".edit_btn"), edit_admin_request_path(m.id) %> </td>
+            <td> <%= link_to t(".delete_btn"), admin_request_path(m.id), method: :delete,
+              data: {confirm: t(".delete_confirm")} %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <div class="no_object_found"> <%= t ".no_request_found" %> </div>
+  <% end %>
+
+  <%= will_paginate %>
+</div>

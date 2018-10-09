@@ -1,0 +1,40 @@
+<% provide :title, t("admin_review_page") %>
+
+<div class="container">
+  <h2> <%= t ".content_1" %> </h2>
+
+  <%= will_paginate %>
+
+  <% if @reviews.size > 0 %>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th> <%= t ".title_user_id" %> </th>
+          <th> <%= t ".title_user_name" %> </th>
+          <th> <%= t ".title_book_id" %> </th>
+          <th> <%= t ".title_rating" %> </th>
+          <th class="admin-title-custom"> <%= t ".title_content" %> </th>
+          <th colspan="2"> <%= t ".title_option" %> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @reviews.each do |m| %>
+          <tr>
+            <td> <%= m.user_id %> </td>
+            <td> <%= link_to m.name, user_path(m.user_id) %> </td>
+            <td> <%= m.book_id %> </td>
+            <td> <%= m.rating %> </td>
+            <td class="admin-row-custom"> <%= m.content %> </td>
+            <td> <%= link_to t(".edit_btn"), edit_admin_review_path(m.id) %> </td>
+            <td> <%= link_to t(".delete_btn"), admin_review_path(m.id), method: :delete,
+              data: {confirm: t(".delete_confirm")} %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <div class="no_object_found"> <%= t ".no_review_found" %> </div>
+  <% end %>
+
+  <%= will_paginate %>
+</div>

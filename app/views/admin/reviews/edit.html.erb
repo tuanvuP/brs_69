@@ -1,0 +1,21 @@
+<% provide :title, t("edit_review") %>
+
+<p>
+  <h1><%= t ".content_1" %></h1>
+  <div class="row-flush">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for @review, url: admin_review_path do |f| %>
+        <%= render "shared/error_messages", object: f.object %>
+
+        <div id="rating-form">
+          <label><%= t ".rating" %></label>
+        </div>
+
+        <%= f.label t("field_content") %>
+        <%= f.text_field :content, class: "form-control" %>
+
+        <%= f.submit t("submit_btn"), class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</p>
