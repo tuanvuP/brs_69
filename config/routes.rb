@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
+  get "/search", to: "books#search"
+
   resources :users do
     member do
       get :following, :followers
@@ -19,4 +21,10 @@ Rails.application.routes.draw do
     resources :reviews
   end
   resources :requests
+  resources :categories
+
+  namespace :admin do
+    root "static_pages#index"
+    resources :users, :books, :reviews, :requests
+  end
 end

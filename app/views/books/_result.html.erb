@@ -1,0 +1,9 @@
+<% book.each do |b| %>
+
+  <div class="col-md-3">
+  <a href="/books/<%= b.id %>", class="book_img">
+    <%= image_tag b.book_img_file_name.url %>
+  </a>
+</div>
+
+<% end %>

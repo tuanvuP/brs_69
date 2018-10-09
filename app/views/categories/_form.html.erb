@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @category do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <%= select_tag(:parent_id, options_for_select(@categories),
+        prompt: "Parent category") %><br>
+
+      <%= f.label :Category_name %>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

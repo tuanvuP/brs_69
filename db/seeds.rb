@@ -14,7 +14,7 @@ User.create!(name: "Admin",
                password_confirmation: password)
 end
 
-5.times do |n|
+7.times do |n|
   name = Faker::Book.genre
   Category.create!(name: name)
 end
@@ -26,7 +26,7 @@ followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
 
-99.times do |n|
+50.times do |n|
   title = Faker::Book.title
   description = "Book's description-#{n+1}"
   author = Faker::Book.author
@@ -35,4 +35,24 @@ followers.each { |follower| follower.follow(user) }
                description: description,
                author: author,
                category_id: category_id)
+end
+
+30.times do |n|
+  user_id = 1 + Random.rand(45)
+  title = Faker::Book.title
+  content = Faker::Job.title
+  Request.create!(user_id: user_id,
+                  title: title,
+                  content: content)
+end
+
+30.times do |n|
+  book_id = 1 + Random.rand(45)
+  user_id = "#{n+1}"
+  rating = [1, 2, 3, 4, 5].sample
+  content = Faker::Job.title
+  Review.create!(book_id: book_id,
+                 user_id: user_id,
+                 rating: rating,
+                 content: content)
 end

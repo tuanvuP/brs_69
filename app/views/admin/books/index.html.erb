@@ -1,0 +1,45 @@
+<% provide :title, t("admin_book_page") %>
+
+<div class="container">
+  <%= render "layouts/flash" %>
+  <h2> <%= t ".content_1" %> </h2>
+
+  <li class="add-book-admin">
+    <%= link_to t(".add_book_btn"), new_admin_book_path, class: "btn btn-custom" %>
+  </li>
+
+  <%= will_paginate %>
+
+  <% if @books.size > 0 %>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th> <%= t ".title_id" %> </th>
+          <th class="admin-title-custom"> <%= t ".title_title" %> </th>
+          <th> <%= t ".title_rate" %> </th>
+          <th> <%= t ".title_author" %> </th>
+          <th> <%= t ".title_cate" %> </th>
+          <th colspan="2"> <%= t ".title_option" %> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @books.each do |m| %>
+          <tr>
+            <td> <%= m.id %> </td>
+            <td class="admin-row-custom"> <%= link_to m.title, book_path(m.id) %> </td>
+            <td> <%= m.rates %> </td>
+            <td> <%= m.author %> </td>
+            <td> <%= m.name %> </td>
+            <td> <%= link_to t(".edit_btn"), edit_admin_book_path(m.id) %> </td>
+            <td> <%= link_to t(".delete_btn"), admin_book_path(m.id), method: :delete,
+              data: {confirm: t(".delete_confirm")} %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <div class="no_object_found"> <%= t ".no_book_found" %> </div>
+  <% end %>
+
+  <%= will_paginate %>
+</div>
