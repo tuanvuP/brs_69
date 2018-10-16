@@ -133,6 +133,7 @@ textarea {
   border: 1px solid black;
   border-radius: 5px;
   font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 10px;
   &:hover {
     text-decoration: none;
     color: gray;
@@ -364,6 +365,25 @@ input {
   height: 15px;
 }
 
-.see-reviews-list li {
+.see-reviews-list {
   list-style: none;
+}
+
+.see-requests-list {
+  list-style: none;
+}
+
+.requests {
+  @include background-tile;
+  margin-top: 40px;
+  .request {
+    border-bottom: 1px solid gainsboro;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    .request-title {
+      font-size: 1.2em;
+      line-height: 1.5;
+    }
+  }
 }

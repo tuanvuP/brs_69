@@ -3,14 +3,7 @@ class ReviewsController < ApplicationController
   before_action :load_review, only: [:edit, :update, :destroy]
   before_action :has_reviewed?, only: [:new]
 
-  def new
-    if logged_in?
-      @review = Review.new
-    else
-      flash[:danger] = t "please_login"
-      redirect_to login_path
-    end
-  end
+  def new; end
 
   def index
     @reviews = @book.reviews.sort_by_created_desc.paginate page: params[:page],
@@ -68,9 +61,11 @@ class ReviewsController < ApplicationController
   end
 
   def has_reviewed?
-    if logged_in? && current_user.reviews.exists?(book: @book)
-      flash[:danger] = t "has_reviewed"
-      redirect_to book_path(@book)
+    if logged_in?
+      if current_user.reviews.exists?(book: @book)
+        flash[:danger] = t "has_reviewed"
+        redirect_to book_path(@book)
+      end
     else
       flash[:danger] = t "please_login"
       redirect_to login_path

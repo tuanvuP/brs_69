@@ -14,6 +14,11 @@ models:
   review:
     content_min_len: 4
     content_max_len: 100
+  request:
+    title_max_len: 100
+    content_min_len: 4
+    content_max_len: 100
+    self_per_page: 5
 
 view:
   user:
