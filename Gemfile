@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.5.1"
 
+gem "pry-rails", group: :development
 gem "will_paginate"
 gem "bootstrap-will_paginate"
 gem "jquery-rails"

@@ -36,8 +36,8 @@
         <li class="dropdown">
           <%= link_to "#" , class: "dropdown-toggle", data: {toggle:"dropdown"} do %>
           <%= t".categories" %> <b class="caret"></b> <% end %>
-          <ul class="dropdown-menu">
-            <% Category.all.each do |category| %>
+          <ul class="dropdown-menu scroll">
+            <% load_categories.each do |category| %>
               <li class="<%= "active" if params[:category] == category.name %>">
                 <%= link_to category.name, books_path(category: category.name) %>
               </li>
